@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("assets/mesh-gradient2.png");
+  background-size: cover;
+  background-attachment: fixed; /* Establece el fondo como fijo */
+  background-position: center; /* Centra el fondo */
+}
+
+/* Estiliza la barra de desplazamiento para navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+  background: #f1f1f1; /* Color de fondo de la barra de desplazamiento */
+}
+
+/* Parte de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 10px; /* Esquinas redondeadas del pulgar */
+}
+
+/* Parte de la barra de desplazamiento en hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del pulgar en hover */
+}
+
+/* Estilos adicionales para Firefox */
+.scroll-container {
+  scrollbar-width: thin; /* Estilo de la barra de desplazamiento (fina) */
+  scrollbar-color: #888 #f1f1f1; /* Color del pulgar y el fondo */
+}

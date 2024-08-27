@@ -1,0 +1,153 @@
+/* src/components/Main.css */
+
+/* Estilos generales */
+.main-container {
+  width: 100%;
+  height: 90vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.containerPrincipal {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.Text-container {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 500;
+  text-align: start;
+  width: 50%;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  margin-bottom: 70px;
+  white-space: pre; /* Asegura que los saltos de línea en el texto se muestren */
+  position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+  padding-right: 2px; /* Ajusta este valor para ajustar la posición del cursor */
+}
+
+.Text-container::after {
+  content: ""; /* Pseudo-elemento vacío */
+  position: absolute;
+  right: 0; /* Alineado al borde derecho del contenedor */
+  bottom: 0; /* Alineado con la parte inferior del contenedor */
+  width: 2px; /* Ancho del cursor */
+  height: 1.2em; /* Altura del cursor */
+  background: #000; /* Color del cursor */
+  animation: blink-caret 0.75s step-end infinite; /* Animación del cursor parpadeante */
+}
+
+/* Animación del cursor parpadeante */
+@keyframes blink-caret {
+  from,
+  to {
+    background: transparent; /* El cursor parpadea */
+  }
+  50% {
+    background: rgba(0, 0, 0, 0); /* El cursor es visible a mitad del ciclo */
+  }
+}
+
+.Image-container img {
+  width: 250px;
+  height: auto;
+  border: 5px solid #00000079;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: grayscale(50%);
+}
+
+.Image-container img:hover {
+  transform: rotate(-5deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  filter: grayscale(0%);
+}
+
+button {
+  margin-top: 50px;
+  padding: 10px 40px;
+  border: none;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Transición suave para el efecto de aumento */
+}
+
+button:hover {
+  transform: scale(1.1); /* Aumenta la imagen al pasar el mouse */
+}
+
+/* Media Queries para hacer el diseño responsive */
+
+/* Para pantallas entre 769px y 1024px (tabletas en modo horizontal) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Text-container {
+    justify-content: center;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-right: 0; /* Ajusta la posición del cursor en pantallas medianas */
+  }
+
+  .Image-container img {
+    width: 200px; /* Reduce el tamaño de la imagen en pantallas medianas */
+  }
+
+  button {
+    margin-top: 40px; /* Ajusta el espacio superior del botón en pantallas medianas */
+    padding: 8px 35px; /* Ajusta el tamaño del botón */
+  }
+}
+
+/* Para pantallas de 768px o menos (tabletas y dispositivos móviles) */
+@media (max-width: 768px) {
+  .Text-container {
+    justify-content: center;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-right: 0; /* Ajusta la posición del cursor en pantallas pequeñas */
+    text-align: center; /* Centro el texto en pantallas más pequeñas */
+  }
+
+  .Image-container img {
+    width: 180px; /* Reduce aún más el tamaño de la imagen en pantallas pequeñas */
+  }
+
+  button {
+    margin-top: 30px; /* Reduce el espacio superior del botón en pantallas pequeñas */
+    padding: 8px 25px; /* Ajusta el tamaño del botón */
+  }
+}
+
+/* Para pantallas de 480px o menos (móviles) */
+@media (max-width: 480px) {
+  .Text-container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Reduce aún más el tamaño de la fuente */
+    margin-bottom: 20px;
+    text-align: start; /* Asegura que el texto esté centrado en móviles */
+  }
+
+  .Image-container img {
+    width: 150px; /* Reduce aún más el tamaño de la imagen en pantallas muy pequeñas */
+  }
+
+  button {
+    margin-top: 20px; /* Reduce el espacio superior del botón en pantallas muy pequeñas */
+    padding: 6px 20px; /* Ajusta el tamaño del botón */
+  }
+}
